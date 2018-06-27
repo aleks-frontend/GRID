@@ -94,7 +94,7 @@
 
 {% comment %}Main navigation{% endcomment %}
 <header class="{% if feature_image %}feature_image{% endif %} {% if section.settings.logo_home != nil %}secondary_logo--true{% endif %}">
-  <div class="header {% if feature_image and settings.header_background == false %}is-absolute {% endif %} header-fixed--{{ section.settings.fixed_header }} {% if settings.header_background %}header-background--solid{% endif %}">
+  <div class="header {% if feature_image and settings.header_background == false %}is-absolute {% endif %} header-fixed--{{ section.settings.fixed_header }} {% if settings.header_background %}header-background--solid{% endif %} header--{{ section.settings.header_color_variation }}">
     {% if section.settings.promo_text != blank %}
       <div class="promo_banner">
         {{ section.settings.promo_text }}
@@ -397,6 +397,22 @@
     {
      "type": "header",
      "content": "Top bar"
+    },
+    {
+      "type": "select",
+      "id": "header_color_variation",
+      "label": "Header color variation",
+      "options": [
+        {
+          "value": "light",
+          "label": "Light"
+        },
+        {
+          "value": "dark",
+          "label": "Dark"
+        }
+      ],
+      "default": "light"
     },
     {
       "type": "checkbox",
